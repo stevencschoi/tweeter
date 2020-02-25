@@ -8,11 +8,11 @@
 
 .counter {
   float: right;
-  font-family: 'Bungee', cursive;
+  font-family: 'Bungee', sans-serif;
 }
 
 .btn {
-  font-family: 'Bungee', cursive;
+  font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: white;
   font-size: 24px;
