@@ -24,6 +24,10 @@
   margin: 0;
 }
 
+.tweet img {
+  margin-right: 5%;
+}
+
 h3, h4, h5 {
   margin:0;
 }
