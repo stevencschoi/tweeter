@@ -1,4 +1,4 @@
-header {
+.page-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +12,6 @@ header {
 
 .avatar {
   position: absolute;
-  /* the image dimensions are 256 x 256px */
-  
+  top: 50%;
+  left: 50%;
 }
