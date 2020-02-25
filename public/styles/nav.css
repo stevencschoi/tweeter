@@ -6,10 +6,10 @@
 nav {
   height: 120px;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background-color: #4056A1;
   color: #ffffff;
-  z-index:1000;
+  z-index:100;
   top: 0;
   padding: 1.5em;
   display: flex;
