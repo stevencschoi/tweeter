@@ -1,14 +1,15 @@
 $(function() {
   const max = 140;
-  $(".tweet-area").keyup(() => {
+  $(".tweet-area").on("input", function() {
     // $(".error").text('');
+    const $counter = $(this).parent().find(".counter");
     const count = $(".tweet-area").val().length;
     const remaining = max - count;
-    $(".counter").text(remaining);
+    $counter.text(remaining);
     if (remaining < 0) {
-      $(".counter").css("color", "red");
+      $counter.addClass("error");
     } else {
-      $(".counter").css("color", "#545149");
+      $counter.removeClass("error");
     }
   });
 })

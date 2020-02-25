@@ -26,8 +26,8 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.error {
+.error.counter {
   color: red;
-  font-size: 1.9rem;
+  /* font-size: 1.9rem; */
   /* margin-left: 10px; */
 }

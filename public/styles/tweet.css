@@ -2,16 +2,13 @@
   border: 4px #545149 solid;
   margin-top: 5%;
   padding: 1.5em;
-  position: relative;
 }
 
-.handle {
-  position: absolute;
-  top:5;
-  left:5;
+.tweet:hover {
+  box-shadow: 10px 10px rgb(113, 133, 199);
 }
 
-.tweet:hover .handle {
+.tweet:hover h4 {
   opacity: 1;
 }
 
@@ -36,7 +33,8 @@ h3, h4 {
   font-weight: 300;
 }
 
-.handle {
+h4 {
+  color: rgb(113, 133, 199);
   opacity: 0;
 }
 
