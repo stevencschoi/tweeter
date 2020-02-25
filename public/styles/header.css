@@ -1,10 +1,17 @@
-.user-profile {
-  height: 400px;
-  width: 100%;
+header {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  position: relative;
   background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
+  height: 400px;
+  width: 100%;
   margin-top: 120px;
+};
+
+.avatar {
+  position: absolute;
+  /* the image dimensions are 256 x 256px */
+  
 }

@@ -6,21 +6,29 @@
   border-bottom: 4px #545149 solid;
 }
 
-.counter {
-  float: right;
-  font-family: 'Bungee', sans-serif;
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1%;
 }
 
 .btn {
   font-family: 'Bungee', sans-serif;
   background-color: #4056A1;
   color: white;
-  font-size: 24px;
+  font-size: 2.4rem;
   padding: 5px 10px;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+  /* float: right; */
 }
 
 .error {
   color: red;
-  font-size: 19px;
+  font-size: 1.9rem;
   margin-left: 10px;
 }

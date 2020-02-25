@@ -30,8 +30,8 @@
     </nav>
 
     <!-- header -->
-    <header class="user-profile">
-      <div>
+    <header>
+      <div class="avatar">
         <img src="/images/profile-hex.png">
       </div>
       <br>
@@ -46,8 +46,10 @@
         <h2>Compose Tweet</h2>
         <form class="new-tweet-form" method="POST" action="/tweets">
           <textarea class="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
-          <input class="btn" type="submit" value="Tweet">
-          <span class="counter">140</span>
+          <div class="form-container">
+            <input class="btn" type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>
         </form>
       </section>
     </main>
