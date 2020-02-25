@@ -13,6 +13,6 @@ nav {
   color: #ffffff;
   z-index:100;
   height: 120px;
-  width: 100vw;
+  width: 100%;
   padding: 1.5em;
 }

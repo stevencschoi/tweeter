@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -21,6 +22,8 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <!-- to display icons -->
+    <script src="https://kit.fontawesome.com/86ffe6f375.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -55,18 +58,21 @@
       <!-- tweet container -->
       <section class="tweet-container">
         <article class="tweet">
+          <div class="handle">
           <header>
             <div>
               <img src="" alt="" class="avatar">
               <h3>Name</h3>
             </div>
-            <h4>@ScreenName</h4>
+            <h4 class="handle">@ScreenName</h4>
           </header>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quod autem, cum iure quo laborum exercitationem aliquid dicta consequatur.</p>
           <footer>
-            <p>10 days ago</p>
+            <h5>10 days ago</h5>
             <div class="icons">
-              <!-- font awesome icons go here -->
+              <a href="#"><i class="fas fa-flag"></i></a>
+              <a href="#" class=""><i class="fas fa-retweet"></i></a>
+              <a href="#"><i class="fas fa-heart"></i></a>
             </div>
           </footer>
         </article>
