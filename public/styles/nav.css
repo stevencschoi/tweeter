@@ -16,3 +16,22 @@ nav {
   width: 100%;
   padding: 1.5em;
 }
+
+nav div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav p {
+  margin: 0;
+}
+
+.compose {
+  background-color: transparent;
+  color: #59c8e4;
+  cursor: pointer;
+  border: none;
+  width: 50%;
+}
