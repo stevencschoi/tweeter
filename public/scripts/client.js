@@ -48,12 +48,16 @@ let $tweet = `
 };
 
 const renderTweets = tweets => {
+  //separating results into array and then join to limit page rendering
+  const markupArray = [];
   // loops through tweets
   for (const tweet of tweets) {
     // calls createTweetElement for each tweet
     const tweetEl = createTweetElement(tweet);
-    $(".tweets-container").append(tweetEl);
+    markupArray.push(tweetEl);
   }
+  markupArray.join("");
+  $(".tweets-container").append(markupArray);
   // takes return value and appends it to the tweets container
 };
 
