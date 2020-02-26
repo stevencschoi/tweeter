@@ -54,13 +54,17 @@ const renderTweets = tweets => {
 };
 
 $(() => {
+  $('.compose').on('click', () => {
+    $('.new-tweet').slideToggle('slow');
+  });
+
   $('form').on('submit', event => {
     event.preventDefault();
     const tweetText = $('.tweet-area').val();
     // data validation
     const error = isTweetValid(tweetText);
     if (error !== true) {
-      alert(error);
+      $('.input-error').text(error);
       return;
     }
 

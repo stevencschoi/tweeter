@@ -1,9 +1,15 @@
+.new-tweet {
+  display:none;
+}
+
 .tweet-area {
   width: 100%;
   background-color: inherit;
   overflow: hidden;
   border: none;
   border-bottom: 4px #545149 solid;
+  margin-top: 3%;
+  caret-color: auto;
 }
 
 .form-container {
@@ -27,8 +33,11 @@
   font-family: 'Bungee', sans-serif;
 }
 
+.error-div {
+  display: flex;
+  color: red;
+}
+
 .error {
   color: red;
-  /* font-size: 1.9rem; */
-  /* margin-left: 10px; */
 }

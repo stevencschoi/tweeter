@@ -43,14 +43,18 @@
       </div>
       <br>
       <div>
-        <h2><span class="bold">Your</span> Name</h2>
+        <h2><span class="bold">Steven</span> Choi</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <div class="error-div">
+          <!-- <i class="fas fa-exclamation-triangle"></i> -->
+          <p class="input-error"></p>
+          <!-- <i class="fas fa-exclamation-triangle"></i> -->
+        </div>
         <form class="new-tweet-form" method="POST" action="/tweets">
           <textarea class="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
           <div class="form-container">
