@@ -46,11 +46,11 @@ const renderTweets = tweets => {
   const markupArray = [];
   for (const tweet of tweets) {
     const tweetEl = createTweetElement(tweet);
-    markupArray.push(tweetEl);
+    markupArray.unshift(tweetEl);
   }
   markupArray.join("");
   // takes return value and appends it to the tweets container
-  $(".tweets-container").append(markupArray);
+  $(".tweets-container").prepend(markupArray);
 };
 
 $(() => {
