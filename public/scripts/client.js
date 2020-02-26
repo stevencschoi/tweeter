@@ -57,20 +57,23 @@ $(() => {
   $('form').on('submit', event => {
     event.preventDefault();
     const tweetText = $('.tweet-area').val();
+    // data validation
     const error = isTweetValid(tweetText);
-      if (error !== true) {
-        alert(error);
-        return;
-      }
-      $.ajax({
-        url: '/tweets',
-        type: 'POST',
-        dataType: $(this).serialize()
-      }).then(() => {
-        console.log('Success!');
-      }).catch(error => {
-        console.error('Something went wrong!', error);
-      });
+    if (error !== true) {
+      alert(error);
+      return;
+    }
+
+    $.ajax({
+      url: '/tweets',
+      type: 'POST',
+      data: $('form').serialize()
+    }).then(() => {
+      console.log('Success!');
+      loadTweets();
+    }).catch(error => {
+      console.error('Something went wrong!', error);
+    });
   });
 
   const loadTweets = () => {
@@ -79,7 +82,7 @@ $(() => {
       type: 'GET',
       dataType: 'JSON'
     }).then(result => {
-      renderTweets(result)
+      renderTweets(result);
     })
     // .catch(error => {
     //   const errorMsg = tweetError(tweet)
