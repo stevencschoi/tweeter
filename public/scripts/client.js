@@ -56,17 +56,21 @@ const renderTweets = tweets => {
 $(() => {
   $('form').on('submit', event => {
     event.preventDefault();
-    console.log('Button clicked, performing ajax call');
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      dataType: $(this).serialize()
-    }).then(tweet => {
-      console.log('Success!');
-    })
-    .catch(error => {
-      console.error('Something went wrong!', error);
-    });
+    const tweetText = $('.tweet-area').val();
+    const error = isTweetValid(tweetText);
+      if (error !== true) {
+        alert(error);
+        return;
+      }
+      $.ajax({
+        url: '/tweets',
+        type: 'POST',
+        dataType: $(this).serialize()
+      }).then(() => {
+        console.log('Success!');
+      }).catch(error => {
+        console.error('Something went wrong!', error);
+      });
   });
 
   const loadTweets = () => {
@@ -76,20 +80,21 @@ $(() => {
       dataType: 'JSON'
     }).then(result => {
       renderTweets(result)
-    }).catch(error => {
-      console.log('Something went wrong!', error);
-    });
+    })
+    // .catch(error => {
+    //   const errorMsg = tweetError(tweet)
+    //   console.log('Something went wrong!', error);
+    // });
   };
 
-  const isTweetValid = () => {
+  // data validation
+  const isTweetValid = (tweetText) => {
     const invalid = ["", null];
-    const $tweetText = $('.tweet-area').val();
-    const $count = $('.tweet-area').val().length;
-    if ($count > 140) {
-      return error('Your tweet exceeds the character limit!');
+    if (tweetText.length > 140) {
+      return 'Your tweet exceeds the character limit!';
     }
-    if (invalid.includes($tweetText)) {
-      return error("You haven't entered anything!");
+    if (invalid.includes(tweetText)) {
+      return "You haven't entered anything!";
     }
     return true;
   };
