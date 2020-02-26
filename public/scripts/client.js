@@ -64,9 +64,9 @@ $(() => {
     }).then(tweet => {
       console.log('Success!');
     })
-    // .catch(error => {
-    //   console.error('Something went wrong!', error);
-    // });
+    .catch(error => {
+      console.error('Something went wrong!', error);
+    });
   });
 
   const loadTweets = () => {
@@ -75,7 +75,22 @@ $(() => {
       type: 'GET',
       dataType: 'JSON'
     }).then(result => {
-      renderTweets(result);
+      renderTweets(result)
+    }).catch(error => {
+      console.log('Something went wrong!', error);
     });
+  };
+
+  const isTweetValid = () => {
+    const invalid = ["", null];
+    const $tweetText = $('.tweet-area').val();
+    const $count = $('.tweet-area').val().length;
+    if ($count > 140) {
+      return error('Your tweet exceeds the character limit!');
+    }
+    if (invalid.includes($tweetText)) {
+      return error("You haven't entered anything!");
+    }
+    return true;
   };
 });
