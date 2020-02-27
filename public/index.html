@@ -51,9 +51,11 @@
     <main class="container">
       <section class="new-tweet">
         <div class="error-div">
-          <!-- <i class="fas fa-exclamation-triangle"></i> -->
-          <p class="input-error"></p>
-          <!-- <i class="fas fa-exclamation-triangle"></i> -->
+          <div>
+            <i class="fas fa-exclamation-triangle"></i>
+            <p class="input-error">Error text here</p>
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
         </div>
         <form class="new-tweet-form" method="POST" action="/tweets">
           <textarea class="tweet-area" name="text" placeholder="What are you humming about?"></textarea>

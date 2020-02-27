@@ -1,5 +1,5 @@
-.new-tweet {
-  display:none;
+.new-tweet-form {
+  display: none;
 }
 
 .tweet-area {
@@ -34,8 +34,25 @@
 }
 
 .error-div {
-  display: flex;
+  display: none;
   color: red;
+  border: 4px solid red;
+  padding: 1.5%;
+  margin-top: 2%;
+}
+
+.error-div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .invisible {
+  visibility: hidden;
+} */
+
+.error-div p {
+  margin: 0 1%;
 }
 
 .error {

@@ -14,7 +14,7 @@ const createTweetElement = data => {
   const dateInMinutes = (Date.now() - dateCreated) / 60000;
   const dateInHours = dateInMinutes / 60;
   const dateInDays = (dateInHours / 24).toFixed(0);
-  const dateInYears = dateInDays / 365;
+  // const dateInYears = dateInDays / 365;
 
   let $tweet = `
     <article class="tweet">
@@ -54,17 +54,21 @@ const renderTweets = tweets => {
 };
 
 $(() => {
+  // display new tweet form
   $('.compose').on('click', () => {
-    $('.new-tweet').slideToggle('slow');
+    $('.new-tweet-form').slideToggle('slow');
   });
 
+  // post tweet to database & add to body
   $('form').on('submit', event => {
     event.preventDefault();
-    const tweetText = $('.tweet-area').val();
+    let tweetText = $('.tweet-area').val();
     // data validation
     const error = isTweetValid(tweetText);
     if (error !== true) {
+      // display errors to user
       $('.input-error').text(error);
+      $('.error-div').slideDown('slow');
       return;
     }
 
@@ -73,15 +77,23 @@ $(() => {
       type: 'POST',
       data: $('form').serialize()
     }).then(() => {
-      console.log('Success!');
       loadTweets();
-    }).catch(error => {
-      console.error('Something went wrong!', error);
+    }).catch(() => {
+      $('.input-error').text('Something went wrong!');
+      $('.error-div').slideDown('slow');
     });
-
-    $('form').reset();
+    //reset form on submission
+    resetElements();
   });
 
+  // reset page elements
+  const resetElements = () => {
+    $('form')[0].reset();
+    $('#counter').text(140);
+    $('.error-div').slideUp('slow');
+  };
+  
+  // load tweets
   const loadTweets = () => {
     $.ajax({
       url: '/tweets',
@@ -89,11 +101,9 @@ $(() => {
       dataType: 'JSON'
     }).then(result => {
       renderTweets(result);
-    })
-    // .catch(error => {
-    //   const errorMsg = tweetError(tweet)
-    //   console.log('Something went wrong!', error);
-    // });
+    }).catch(error => {
+      console.error('Something went wrong!', error);
+    });
   };
 
   // data validation
