@@ -1,7 +1,7 @@
 $(() => {
   // stretch toggle button to display new tweet form and scroll up
   $('.toggle').on('click', () => {
-    $('.new-tweet-form').slideDown('slow', resetElements);
+    $('.new-tweet-form').slideDown('slow');
     scrollToTop();
     $('.toggle').addClass('invisible');
   });

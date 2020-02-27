@@ -59,10 +59,10 @@ const renderTweets = tweets => {
 const isTweetValid = (tweetText) => {
   const invalid = ["", null];
   if (tweetText.length > 140) {
-    return 'Your tweet exceeds the character limit!';
+    return 'Text exceeds the character limit!';
   }
   if (invalid.includes(tweetText)) {
-    return "You haven't entered anything!";
+    return 'Text input is empty!';
   }
   return true;
 };
@@ -70,7 +70,7 @@ const isTweetValid = (tweetText) => {
 // reset page elements
 const resetElements = () => {
   $('form')[0].reset();
-  $('#counter').text(140);
+  $('#counter').text(140).removeClass('error');
   $('.error-div').slideUp('slow');
 };
 
