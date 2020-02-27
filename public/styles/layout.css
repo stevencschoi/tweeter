@@ -6,7 +6,7 @@
 
 html {
   box-sizing: border-box;
-  /* set font size to 62.5 to make base font 10px for responsive font size */
+  /* set font size to 62.5% to make base font 10px for responsive font size */
   font-size:62.5%;
   scroll-behavior: smooth;
 }
@@ -49,6 +49,7 @@ main {
   right: 2%;
   bottom: 2%;
   cursor: pointer;
+  z-index: 20;
 }
 
 .toggle:hover,

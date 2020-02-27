@@ -3,10 +3,11 @@ $(() => {
   $('.toggle').on('click', () => {
     $('.new-tweet-form').slideDown('slow');
     scrollToTop();
+    $('.tweet-area').focus();
     $('.toggle').addClass('invisible');
   });
 
-  // listening for scroll on window
+  // listening for scroll on window (older function notation as es6 notation does not run this)
   window.onscroll = function() {
     showWhichButton();
   };

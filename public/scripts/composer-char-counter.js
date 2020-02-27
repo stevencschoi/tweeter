@@ -1,4 +1,5 @@
 $(() => {
+  // using older function notation as es6 notation does not run this
   $(".tweet-area").on("input", function() {
     const max = 140;
     // search for anything in the parent element (form) with the class "counter"

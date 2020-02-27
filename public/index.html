@@ -50,9 +50,10 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main>
       <section class="new-tweet">
         <div class="error-div">
+          <!-- wrapping another div for centering icons/text in line -->
           <div>
             <i class="fas fa-exclamation-triangle"></i>
             <p class="input-error">Error text here</p>
@@ -61,6 +62,7 @@
         </div>
         <form class="new-tweet-form" method="POST" action="/tweets">
           <textarea class="tweet-area" name="text" placeholder="What are you humming about?"></textarea>
+          <!-- new div to align counter and button -->
           <div class="form-container">
             <input class="btn" type="submit" value="Tweet">
             <span id="counter">140</span>
