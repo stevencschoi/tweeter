@@ -9,7 +9,8 @@ nav {
   align-items: center;
   position: fixed;
   top: 0;
-  background-color: #4056A1;
+  /* background-color: #4056A1; */
+  background-color: transparent;
   color: #ffffff;
   z-index:100;
   height: 120px;
@@ -30,10 +31,15 @@ nav p {
 
 .compose {
   background-color: transparent;
-  color: #59c8e4;
+  color: #dfa529;
   cursor: pointer;
   border: none;
   width: 50%;
+}
+
+.compose:hover,
+.compose:focus {
+  color: #4056A1;
 }
 
 @keyframes bounce { 

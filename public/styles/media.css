@@ -4,7 +4,17 @@
   }
 
   nav {
+    background-color: #4056A1;
     margin-bottom: 2em;
+  }
+
+  .compose {
+    color: #dfa529;
+  }
+
+  .compose:hover,
+  .compose:focus {
+    color: #59c8e4;
   }
 
   .page-header {
@@ -25,5 +35,14 @@
 
   .icons {
     width:20%;
+  }
+
+  .toggle {
+    background-color:#59c8e4;
+  }
+
+  .toggle:hover,
+  .toggle:focus {
+    background-color:#dfa529;
   }
 }

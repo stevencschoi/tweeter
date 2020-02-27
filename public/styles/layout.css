@@ -51,8 +51,8 @@ main {
   height:3em;
   width:3em;
   position: fixed;
-  right: 3%;
-  bottom: 3%;
+  right: 2%;
+  bottom: 2%;
   cursor: pointer;
   /* display: none; */
 }

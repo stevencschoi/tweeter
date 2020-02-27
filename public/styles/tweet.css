@@ -4,12 +4,19 @@
   padding: 1.5em;
 }
 
-.tweet:hover {
+.tweet:hover,
+.tweet:focus {
   box-shadow: 0.6em 0.6em rgb(113, 133, 199);
 }
 
-.tweet:hover h4 {
+.tweet:hover h4,
+.tweet:focus h4 {
   opacity: 1;
+}
+
+.tweet:hover .icons,
+.tweet:focus .icons {
+  z-index: 10;
 }
 
 .tweet header {
@@ -66,8 +73,14 @@ h5, .icons {
   display: flex;
   justify-content: space-between;
   width: 12%;
+  z-index: -10;
 }
 
 a {
   color: #4056A1;
+}
+
+.icons a:hover,
+.icons a:focus {
+  color: #dfa529;
 }
