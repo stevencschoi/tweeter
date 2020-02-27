@@ -1,0 +1,29 @@
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  nav {
+    margin-bottom: 2em;
+  }
+
+  .page-header {
+    /* 120 px to account for fixed nav */
+    margin-top: calc(4em + 120px);
+    margin-left: 2em;
+  }
+
+  main {
+    margin-top: calc(3em + 120px);
+    margin-right: 2em;
+    margin-left: 5em;
+  }
+
+  .new-tweet-form {
+    margin-top: 1em;
+  }
+
+  .icons {
+    width:20%;
+  }
+}
