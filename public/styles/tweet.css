@@ -2,7 +2,6 @@
   border: 4px #545149 solid;
   margin-top: 5%;
   padding: 1.5em;
-  word-wrap: break-word;
 }
 
 .tweet:hover {
@@ -36,6 +35,7 @@ h3, h4, h5 {
 h3, h4 {
   font-size: 2.4rem;
   font-weight: 300;
+  white-space: nowrap;
 }
 
 h4 {
@@ -45,6 +45,7 @@ h4 {
 
 .tweet p {
   font-size: 2.4rem;
+  overflow-wrap: break-word;
   border-bottom: 4px #545149 solid;
   padding-bottom: 3%;
   margin: 3% 0% 1%;
