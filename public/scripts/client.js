@@ -53,6 +53,26 @@ const renderTweets = tweets => {
   $(".tweets-container").prepend(markupArray);
 };
 
+// data validation
+const isTweetValid = (tweetText) => {
+  const invalid = ["", null];
+  if (tweetText.length > 140) {
+    return 'Your tweet exceeds the character limit!';
+  }
+  if (invalid.includes(tweetText)) {
+    return "You haven't entered anything!";
+  }
+  return true;
+};
+
+// reset page elements
+const resetElements = () => {
+  $('form')[0].reset();
+  $('#counter').text(140);
+  $('.error-div').slideUp('slow');
+};
+
+// <-------- document ready -------->
 $(() => {
   // display new tweet form
   $('.compose').on('click', () => {
@@ -88,13 +108,6 @@ $(() => {
       resetElements();
     });
   });
-
-  // reset page elements
-  const resetElements = () => {
-    $('form')[0].reset();
-    $('#counter').text(140);
-    $('.error-div').slideUp('slow');
-  };
   
   // load tweets
   const loadTweets = () => {
@@ -109,15 +122,5 @@ $(() => {
     });
   };
 
-  // data validation
-  const isTweetValid = (tweetText) => {
-    const invalid = ["", null];
-    if (tweetText.length > 140) {
-      return 'Your tweet exceeds the character limit!';
-    }
-    if (invalid.includes(tweetText)) {
-      return "You haven't entered anything!";
-    }
-    return true;
-  };
+  loadTweets();
 });
