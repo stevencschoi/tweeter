@@ -15,10 +15,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -54,7 +50,11 @@ main {
   right: 2%;
   bottom: 2%;
   cursor: pointer;
-  /* display: none; */
+}
+
+.toggle:hover,
+.toggle:focus {
+  background-color: #4056A1;
 }
 
 .invisible {
