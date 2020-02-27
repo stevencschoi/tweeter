@@ -78,7 +78,10 @@ const resetElements = () => {
 $(() => {
   // display new tweet form on button
   $('.compose').on('click', () => {
-    $('.new-tweet-form').slideDown('slow', resetElements);
+    $('.new-tweet-form').slideToggle('slow', resetElements);
+    if ($('.new-tweet-form').is(":visible")) {
+      $('.tweet-area').focus();
+    }
   });
 
   // post tweet to database & add to body
