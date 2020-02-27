@@ -11,10 +11,34 @@ const createTweetElement = data => {
   const { text } = data.content;
   // 60,000 milliseconds in a minute --- assuming date.created_at is the time created from 1970 in milliseconds
   const dateCreated = data.created_at;
-  const dateInMinutes = (Date.now() - dateCreated) / 60000;
-  const dateInHours = dateInMinutes / 60;
+  const dateInMinutes = ((Date.now() - dateCreated) / 60000).toFixed(0);
+  const dateInHours = (dateInMinutes / 60).toFixed(0);
   const dateInDays = (dateInHours / 24).toFixed(0);
+  const dateInMonths = (dateInDays / 30).toFixed(0);
+
+  let dateString = '';
   // const dateInYears = dateInDays / 365;
+  if (dateInMinutes < 1) {
+    dateString = 'A few seconds ago';
+    // 60 seconds in a minute
+  } else if (dateInMinutes < 60) {
+    dateString = `${dateInMinutes} minutes ago`;
+    // less than 2 hours = about an hour ago because math
+  } else if (dateInMinutes < 120) {
+    dateString = 'About an hour ago';
+    // math continues...
+  } else if (dateInMinutes < 1440) {
+    dateString = `${dateInHours} hours ago`;
+  } else if (dateInMinutes < 43200) {
+    dateString = `${dateInDays} days ago`;
+    // less than 2 months = over a month
+  } else if (dateInMinutes < 86400) {
+    dateString = 'Over a month ago';
+  } else if (dateInMinutes <= 518400) {
+    dateString = `${dateInMonths} months ago`;
+  } else {
+    dateString = 'Over a year ago';
+  }
 
   let $tweet = `
     <article class="tweet">
@@ -27,7 +51,7 @@ const createTweetElement = data => {
       </header>
       <p>${escape(text)}</p>
       <footer>
-        <h5>${dateInDays} days ago</h5>
+        <h5>${dateString}</h5>
         <div class="icons">
           <a href="#"><i class="fas fa-flag"></i></a>
           <a href="#" class=""><i class="fas fa-retweet"></i></a>
