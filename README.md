@@ -10,3 +10,11 @@ Tweeter is a mobile-responsive, single-page Twitter clone which uses industry be
 ## Getting Started
 
 - Install all dependencies (using the `npm install` command).
+
+# Screenshots
+
+!["Screenshot of tweet compose box"](https://raw.githubusercontent.com/stevencschoi/tweeter/master/docs/tweeter-mobile.png)
+
+!["Screenshot of tweeter feed"](https://raw.githubusercontent.com/stevencschoi/tweeter/master/docs/tweeter-feed.png)
+
+!["Screenshot of tweet error"](https://raw.githubusercontent.com/stevencschoi/tweeter/master/docs/tweeter-desktop-text-error.png)
