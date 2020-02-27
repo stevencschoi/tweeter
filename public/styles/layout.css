@@ -6,6 +6,7 @@
 
 html {
   box-sizing: border-box;
+  /* set font size to 62.5 to make base font 10px for responsive font size */
   font-size:62.5%;
   scroll-behavior: smooth;
 }
@@ -23,6 +24,10 @@ body {
   font-size: 2.4rem;
   font-family: 'Source Sans Pro', sans-serif;
   position: relative;
+}
+
+img {
+  max-width: 100%;
 }
 
 h2 {

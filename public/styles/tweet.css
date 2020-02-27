@@ -1,11 +1,11 @@
 .tweet {
-  border: 4px #545149 solid;
+  border: 0.2em #545149 solid;
   margin-top: 5%;
   padding: 1.5em;
 }
 
 .tweet:hover {
-  box-shadow: 10px 10px rgb(113, 133, 199);
+  box-shadow: 0.8em 0.8em rgb(113, 133, 199);
 }
 
 .tweet:hover h4 {
@@ -46,7 +46,7 @@ h4 {
 .tweet p {
   font-size: 2.4rem;
   overflow-wrap: break-word;
-  border-bottom: 4px #545149 solid;
+  border-bottom: 0.2em #545149 solid;
   padding-bottom: 3%;
   margin: 3% 0% 1%;
 }
