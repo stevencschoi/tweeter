@@ -1,21 +1,25 @@
-$(() => {
-  // second toggle button to display new tweet form and scroll up
-  $('.toggle').on('click', () => {
-    $('.new-tweet-form').slideDown('slow', resetElements);
-    scrollToTop();
-  });
-
+$(function() {
+  // stretch toggle button to display new tweet form and scroll up
   const headerButton = document.getElementsByClassName('.compose');
   const bottomButton = document.getElementsByClassName('.toggle');
 
+  $('.toggle').on('click', () => {
+    $('.new-tweet-form').slideDown('slow', resetElements);
+    scrollToTop();
+    // $('.toggle').addClass('invisible');
+  });
+
+  window.onscroll = function() { showWhichButton() };
+  
+  // When the user scrolls down 20px from the top of the document, show the button
   const showWhichButton = () => {
     // accounting for differences in browser compatibility
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      headerButton.hide();
-      bottomButton.show();
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      headerButton.addClass('invisible');
+      bottomButton.removeClass('invisible');
     } else {
-      headerButton.show();
-      bottomButton.hide();
+      headerButton.removeClass('invisible');
+      bottomButton.addClass('invisible');
     }
   }
 
