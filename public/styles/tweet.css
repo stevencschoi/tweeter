@@ -2,6 +2,7 @@
   border: 4px #545149 solid;
   margin-top: 5%;
   padding: 1.5em;
+  word-wrap: break-word;
 }
 
 .tweet:hover {

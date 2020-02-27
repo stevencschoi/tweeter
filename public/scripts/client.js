@@ -42,6 +42,8 @@ const createTweetElement = data => {
 };
 
 const renderTweets = tweets => {
+  // clear out array before re-loading data
+  $('.tweets-container').empty();
   //separating tweets into array and then join to limit page rendering performance issues
   const markupArray = [];
   for (const tweet of tweets) {
@@ -74,9 +76,9 @@ const resetElements = () => {
 
 // <-------- document ready -------->
 $(() => {
-  // display new tweet form
+  // display new tweet form on button
   $('.compose').on('click', () => {
-    $('.new-tweet-form').slideToggle('slow', resetElements);
+    $('.new-tweet-form').slideDown('slow', resetElements);
   });
 
   // post tweet to database & add to body
@@ -106,6 +108,7 @@ $(() => {
       });
       //reset form on submission
       resetElements();
+      // $('.new-tweet-form').slideUp('slow');
     });
   });
   
