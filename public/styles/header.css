@@ -3,20 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
   background-color: #59c8e4;
   background-image: url("https://www.transparenttextures.com/patterns/black-paper.png");
   color: #ffffff;
   height: 400px;
   width: 100%;
-};
-
-.avatar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 
 .bold {
-  font-weight:700;
+  font-weight: 700;
 }

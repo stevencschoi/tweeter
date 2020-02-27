@@ -8,7 +8,6 @@ html {
   box-sizing: border-box;
   /* set font size to 62.5 to make base font 10px for responsive font size */
   font-size:62.5%;
-  /* this property is not widely supported; would ideally look for a jquery method to address */
   scroll-behavior: smooth;
 }
 *, *:before, *:after {
