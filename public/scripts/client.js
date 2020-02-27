@@ -56,34 +56,37 @@ const renderTweets = tweets => {
 $(() => {
   // display new tweet form
   $('.compose').on('click', () => {
-    $('.new-tweet-form').slideToggle('slow');
+    $('.new-tweet-form').slideToggle('slow', resetElements);
   });
 
   // post tweet to database & add to body
   $('form').on('submit', event => {
     event.preventDefault();
     let tweetText = $('.tweet-area').val();
-    // data validation
-    const error = isTweetValid(tweetText);
-    if (error !== true) {
-      // display errors to user
-      $('.input-error').text(error);
-      $('.error-div').slideDown('slow');
-      return;
-    }
+    // sliding up the error window to wipe any existing error messages, then proceed with validation inside anonymous fn
+    $('.error-div').slideUp('slow', () => {
+      // data validation
+      const error = isTweetValid(tweetText);
+      if (error !== true) {
+        // display errors to user
+        $('.input-error').text(error);
+        $('.error-div').slideDown('slow');
+        return;
+      }
 
-    $.ajax({
-      url: '/tweets',
-      type: 'POST',
-      data: $('form').serialize()
-    }).then(() => {
-      loadTweets();
-    }).catch(() => {
-      $('.input-error').text('Something went wrong!');
-      $('.error-div').slideDown('slow');
+      $.ajax({
+        url: '/tweets',
+        type: 'POST',
+        data: $('form').serialize()
+      }).then(() => {
+        loadTweets();
+      }).catch(() => {
+        $('.input-error').text('Something went wrong!');
+        $('.error-div').slideDown('slow');
+      });
+      //reset form on submission
+      resetElements();
     });
-    //reset form on submission
-    resetElements();
   });
 
   // reset page elements
