@@ -12,4 +12,4 @@ $(() => {
       $counter.removeClass("error");
     }
   });
-})
+});

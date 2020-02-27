@@ -7,7 +7,8 @@ $(() => {
   });
 
   // listening for scroll on window
-  window.onscroll = function() { showWhichButton();
+  window.onscroll = function() {
+    showWhichButton();
   };
   
   // if the user scrolls down 50px from the top of the document, hide compose button and show toggle button
@@ -22,7 +23,7 @@ $(() => {
     }
   };
 
-   // When the user clicks on the button, scroll to the top of the document
+  // When the user clicks on the button, scroll to the top of the document
   const scrollToTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;

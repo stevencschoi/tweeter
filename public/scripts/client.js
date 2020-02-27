@@ -55,7 +55,7 @@ const renderTweets = tweets => {
   $(".tweets-container").prepend(markupArray);
 };
 
-// data validation
+// data validation function
 const isTweetValid = (tweetText) => {
   const invalid = ["", null];
   if (tweetText.length > 140) {
@@ -79,6 +79,7 @@ $(() => {
   // display new tweet form on button
   $('.compose').on('click', () => {
     $('.new-tweet-form').slideToggle('slow', resetElements);
+    // move cursor to form text area
     if ($('.new-tweet-form').is(":visible")) {
       $('.tweet-area').focus();
     }
@@ -93,12 +94,12 @@ $(() => {
       // data validation
       const error = isTweetValid(tweetText);
       if (error !== true) {
-        // display errors to user
+        // display errors on screen
         $('.input-error').text(error);
         $('.error-div').slideDown('slow');
         return;
       }
-
+      // ajax call
       $.ajax({
         url: '/tweets',
         type: 'POST',
@@ -111,7 +112,6 @@ $(() => {
       });
       //reset form on submission
       resetElements();
-      // $('.new-tweet-form').slideUp('slow');
     });
   });
   
