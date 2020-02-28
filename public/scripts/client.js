@@ -85,7 +85,8 @@ const isTweetValid = (tweetText) => {
   if (tweetText.length > 140) {
     return 'Text exceeds the character limit!';
   }
-  if (invalid.includes(tweetText)) {
+  // verification if tweetText is only whitespace
+  if (invalid.includes(tweetText) || tweetText.trim() < 2) {
     return 'Text input is empty!';
   }
   return true;
