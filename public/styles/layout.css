@@ -50,6 +50,7 @@ main {
   bottom: 2%;
   cursor: pointer;
   z-index: 20;
+  display:none;
 }
 
 .toggle:hover,
@@ -57,9 +58,6 @@ main {
   background-color: #4056A1;
 }
 
-.invisible {
-  display:none;
-}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
