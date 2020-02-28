@@ -21,6 +21,8 @@ const createTweetElement = data => {
   if (dateInMinutes < 1) {
     dateString = 'A few seconds ago';
     // 60 seconds in a minute
+  } else if (dateInMinutes < 2) {
+    dateString = '1 minute ago';
   } else if (dateInMinutes < 60) {
     dateString = `${dateInMinutes} minutes ago`;
     // less than 2 hours = about an hour ago because math
