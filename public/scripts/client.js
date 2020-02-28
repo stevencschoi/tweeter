@@ -85,8 +85,8 @@ const isTweetValid = (tweetText) => {
   if (tweetText.length > 140) {
     return 'Text exceeds the character limit!';
   }
-  if (invalid.includes(tweetText) || $.trim(tweetText).length < 2) {
-    return 'Please enter your tweet!';
+  if (invalid.includes(tweetText)) {
+    return 'Text input is empty!';
   }
   return true;
 };
