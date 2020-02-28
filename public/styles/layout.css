@@ -8,7 +8,7 @@ html {
   box-sizing: border-box;
   /* set font size to 62.5% to make base font 10px for responsive font size */
   font-size:62.5%;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 *, *:before, *:after {
   box-sizing: inherit;
